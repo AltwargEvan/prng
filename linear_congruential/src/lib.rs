@@ -161,7 +161,6 @@ impl LinearCongruentialGenerator {
             Some((start, end)) => {
                 // Not sure if this range is supposed to be inclusive or exclusive
                 // wikipedia is unclear about this or I can't read
-                println!("premask {}", next_seed);
                 let mask = u64::MAX >> (64 - end);
                 let clipped_end = next_seed & mask;
                 (clipped_end >> start) as u32
